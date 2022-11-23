@@ -29,7 +29,7 @@ input::placeholder{
     width: 165px;
 }
 
-.cards-container{
+.card-carousel{
     display: flex;
     align-items: center;
     position: absolute;

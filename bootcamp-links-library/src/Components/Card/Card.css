@@ -1,4 +1,4 @@
-.card-container{
+.card-carousel{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,7 +9,7 @@
     background-color: rgba(255,255,245, .5);
     border-radius: 5px;
 }
-.card-container:hover{
+.card-carousel:hover{
     background-color: rgba(255,255,245, .8);
     /* opacity: 1; */
     cursor: pointer;

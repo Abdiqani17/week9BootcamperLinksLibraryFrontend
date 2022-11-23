@@ -1,10 +1,12 @@
 import React from "react";
 import "./Card.css";
+
 function Card(props) {
+  console.log(props.description)
   return [
     <div className="card-container">
       <div className="card-top">
-        <div><img src={props.subjectIcon} /></div>
+        <div><img src={props.subjectIcon} alt={""}/></div>
         <h1>{props.title}</h1>
       </div>
       <div className="card-middle">

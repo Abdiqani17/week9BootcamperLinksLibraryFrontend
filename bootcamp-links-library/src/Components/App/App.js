@@ -3,11 +3,13 @@ import "./App.css";
 // import Arrow from "../Arrow/Arrow";
 import Banner from "../Banner/Banner";
 import Button from "../Button/Button";
-import Card from "../Card/Card";
+//import Card from "../Card/Card";
 import Dropdown from "../Dropdown/Dropdown";
 import Header from "../Header/Header";
 import Input from "../Input/Input";
 import RadioButtons from "../RadioButtons/RadioButtons";
+//IMPORTING OUR NEW CAROUSEL COMPONENT
+import Carousel from "../Carousel/Carousel";
 
 function App() {
   const [dropWeek, setDropWeek] = useState("");
@@ -139,13 +141,14 @@ function App() {
           />
         </div>
         <div className="button-go-container">
-          <Button buttonText="GO" buttonClick={findBySectionButton} />
+       <Button buttonText="GO" buttonClick={findBySectionButton} />
         </div>
-      </div>
-      <div className="cards-container">
+     </div>
+    
+  <div className="card-carousel">
         {cardsArr.map((card) => {
           return (
-            <Card
+            <Carousel
               key={card.link_id}
               subjectIcon={card.icon}
               title={card.title}
@@ -154,7 +157,28 @@ function App() {
             />
           );
         })}
-      </div>
+      </div> 
+
+     {/* <div className="cards-carousel">
+          <Carousel cards={cardsArr}>
+            <Card
+              key={cardsArr.link_id}
+              subjectIcon={cardsArr.icon}
+              title={cardsArr.title}
+              description={cardsArr.description}
+              link={cardsArr.link}
+            />
+            <Card
+              key={cardsArr.link_id}
+              subjectIcon={cardsArr.icon}
+              title={cardsArr.title}
+              description={cardsArr.description}
+              link={cardsArr.link}
+            /></Carousel> ;
+  
+      </div>*/}
+
+
       <div className="footer-container">
         <div className="banner-container">
           <Banner />
