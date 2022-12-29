@@ -9,6 +9,8 @@ import Header from "../Header/Header";
 import InputField from "../InputField/InputField";
 import RadioButtons from "../RadioButtons/RadioButtons";
 
+const url= process.env.REACT_APP_BACKEND_URL ?? 'http://localhost:3003'
+
 function App() {
 //Search section- Header
   const [dropWeek, setDropWeek] = useState("");
@@ -45,14 +47,14 @@ function App() {
 
  //Display section- Main
   async function weekFetch(week) {
-    const response = await fetch(`http://localhost:3003/api/links/${week}`);
+    const response = await fetch(`${url}/api/links/${week}`);
     const data = await response.json();
     setCardsArr(data.payload);
   
   }
   async function subjectFetch(subject) {
     const response = await fetch(
-      `http://localhost:3003/api/links?subject=${subject}`
+      `${url}/api/links?subject=${subject}`
     );
     const data = await response.json();
     setCardsArr(data.payload);
@@ -97,7 +99,7 @@ function App() {
     }
   }
   async function inputSectionPost(data) {
-    const response = await fetch("http://localhost:3003/api/links/", {
+    const response = await fetch(`${url}/api/links/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -137,6 +139,7 @@ function App() {
         {cardsArr.map((card) => {
           return (
             <Card
+              url={url}
               key={card.link_id}
               subjectIcon={card.icon}
               title={card.title}
